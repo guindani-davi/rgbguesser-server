@@ -1,2 +1,2 @@
-# rgbguesser
-a website to to implement the rgb guess game
+# rgbguesser-server
+a server to implement the rgb guess game
