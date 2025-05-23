@@ -5,6 +5,7 @@ import crypto from "crypto";
 import Quiz from "./models/Quiz";
 import Question from "./models/Question";
 import dotenv from "dotenv";
+import AnswerCheckCustomJwtPayload from "Question";
 
 dotenv.config();
 
@@ -74,9 +75,56 @@ const quizzes: Quiz[] = [quiz1, quiz2];
 app.post("/api/quiz/start", (req, res) => {
   const { quizId } = req.body;
   const quiz = quizzes.filter((quizz) => quizz.id === quizId)[0];
-  console.log(process.env.JWT_SECRET);
-  console.log(process.env.SECRET_KEY);
-  res.send(quiz);
+
+  const answersHash: string[] = [];
+  quiz.questions.forEach((question) => {
+    answersHash.push(
+      crypto
+        .createHmac("sha256", process.env.SECRET_KEY!)
+        .update(question.answer)
+        .digest("hex")
+    );
+  });
+
+  const token = jwt.sign({ quizId, answersHash }, process.env.JWT_SECRET!, {
+    expiresIn: "1h",
+  });
+
+  const quizWithoutAnswers = {
+    questions: quiz.questions.map((question) => ({
+      ...question,
+      answer: undefined,
+    })),
+  };
+
+  res.json({
+    quiz: quizWithoutAnswers,
+    token,
+  });
+});
+
+app.post("/api/quiz/check", (req, res) => {
+  const { questionId, answer, token } = req.body;
+
+  try {
+    // Verifica o JWT
+    const decoded = jwt.verify(
+      token,
+      process.env.JWT_SECRET!
+    ) as AnswerCheckCustomJwtPayload;
+
+    // Calcula o hash da resposta do usuário
+    const userHash = crypto
+      .createHmac("sha256", process.env.SECRET_KEY!)
+      .update(answer)
+      .digest("hex");
+
+    // Compara com o hash armazenado
+    const isCorrect = decoded.answersHash[questionId - 1] === userHash;
+    res.json({ isCorrect });
+  } catch (error) {
+    res.status(401).json({ error: "Token inválido" });
+  }
 });
 
 app.get("/", (req: Request, res: Response) => {
