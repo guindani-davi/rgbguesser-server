@@ -10,7 +10,7 @@ import AnswerCheckCustomJwtPayload from "Question";
 dotenv.config();
 
 const app = express();
-const PORT = process.env.PORT || 3000;
+const PORT = process.env.PORT!;
 
 app.use(cors());
 app.use(express.json());
@@ -121,6 +121,7 @@ app.post("/api/quiz/check", (req, res) => {
 
     // Compara com o hash armazenado
     const isCorrect = decoded.answersHash[questionId - 1] === userHash;
+    console.log(isCorrect);
     res.json({ isCorrect });
   } catch (error) {
     res.status(401).json({ error: "Token inválido" });
