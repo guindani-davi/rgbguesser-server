@@ -1,8 +1,9 @@
 - Levantamento inicial de requisitos
 - Definição de metodologias e padrões
-	- Definir metodologia de desenvolvimento (cascata, ágil, etc.)
-	- Definir fluxo de trabalho com Git (GitHub Flow / Feature Branch, Git Flow ou Trunk Based Development)
+	- Definir metodologia de desenvolvimento
+	- Definir fluxo de trabalho com Git
 	- Definir padrões de commits e nomenclatura de branches
+	- Definir metodologia de desenvolvimento focada em testes
 - Diagramação
 	- Diagrama de casos de uso
 	- Diagrama de classes
@@ -16,11 +17,13 @@
 			- Configurar ferramentas
 			- Definir tecnologias
 			- Configurar tecnologias
+			- Planejar e implantar CI/CD
 		- Banco
 			- Definir ferramentas
 			- Configurar ferramentas
 			- Definir tecnologias
 			- Configurar tecnologias
+			- Planejar e implantar CI/CD
 	- Cliente
 		- Definir hospedagem
 		- Configurar hospedagem
@@ -28,3 +31,4 @@
 		- Configurar ferramentas
 		- Definir tecnologias
 		- Configurar tecnologias
+		- Planejar e implantar CI/CD
