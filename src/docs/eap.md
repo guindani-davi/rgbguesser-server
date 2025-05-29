@@ -1,35 +1,37 @@
 - Levantamento inicial de requisitos
 - Definição de metodologias e padrões
-	- Definir metodologia de desenvolvimento
-	- Definir fluxo de trabalho com Git
-	- Definir padrões de commits e nomenclatura de branches
-	- Definir metodologia de desenvolvimento focada em testes
+  - Definir metodologia de desenvolvimento
+  - Definir fluxo de trabalho com Git
+  - Definir padrões de commits e nomenclatura de branches
+  - Definir metodologia de desenvolvimento focada em testes
 - Diagramação
-	- Diagrama de casos de uso
-	- Diagrama de classes
-	- Diagrama de sequência
-	- Desenhar arquitetura
+  - Diagrama de casos de uso
+  - Diagrama de classes
+  - Diagrama de sequência
+  - Desenhar arquitetura
 - Configurações
-	- Backend
-		- Servidor
-			- Definir hospedagem
-			- Configurar hospedagem
-			- Definir ferramentas
-			- Configurar ferramentas
-			- Definir tecnologias
-			- Configurar tecnologias
-			- Planejar e implantar CI/CD
-		- Banco
-			- Definir ferramentas
-			- Configurar ferramentas
-			- Definir tecnologias
-			- Configurar tecnologias
-			- Planejar e implantar CI/CD
-	- Cliente
-		- Definir hospedagem
-		- Configurar hospedagem
-		- Definir ferramentas      
-		- Configurar ferramentas
-		- Definir tecnologias
-		- Configurar tecnologias
-		- Planejar e implantar CI/CD
+  - Backend
+    - Servidor
+      - Definir hospedagem
+      - Configurar hospedagem
+      - Definir ferramentas
+      - Configurar ferramentas
+      - Definir tecnologias
+      - Configurar tecnologias
+      - Planejar e implantar CI/CD
+      - Definir variáveis de ambiente
+    - Banco
+      - Definir ferramentas
+      - Configurar ferramentas
+      - Definir tecnologias
+      - Configurar tecnologias
+      - Planejar e implantar CI/CD
+  - Cliente
+    - Definir hospedagem
+    - Configurar hospedagem
+    - Definir ferramentas
+    - Configurar ferramentas
+    - Definir tecnologias
+    - Configurar tecnologias
+    - Planejar e implantar CI/CD
+    - Definir variáveis de ambiente
