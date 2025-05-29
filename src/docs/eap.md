@@ -8,6 +8,7 @@
 	- Diagrama de casos de uso
 	- Diagrama de classes
 	- Diagrama de sequência
+	- Desenhar arquitetura
 - Configurações
 	- Backend
 		- Servidor
