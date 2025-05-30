@@ -4,8 +4,8 @@
   "main": "src/server.ts",
   "scripts": {
     "dev": "nodemon --watch src --exec ts-node src/server.ts",
-    "lint:check": "prettier --check .",
-    "lint:fix": "prettier --write ."
+    "lint:prettier:check": "prettier --check .",
+    "lint:prettier:fix": "prettier --write ."
   },
   "repository": {
     "type": "git",
