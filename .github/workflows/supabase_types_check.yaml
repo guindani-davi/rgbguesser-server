@@ -1,11 +1,11 @@
-name: CI
+name: Supabase Types Check
 
 on:
   pull_request:
   workflow_dispatch:
 
 jobs:
-  test:
+  check:
     runs-on: ubuntu-latest
 
     steps:
@@ -18,7 +18,7 @@ jobs:
       - name: Start Supabase
         run: supabase db start
 
-      - name: Verify generated types
+      - name: Check generated types
         run: |
           supabase gen types typescript --local > ./src/types/database.types.ts
 
