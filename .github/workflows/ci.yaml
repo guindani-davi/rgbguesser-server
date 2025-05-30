@@ -15,14 +15,18 @@ jobs:
         with:
           version: latest
 
-      - name: Start Supabase local development setup
+      - name: Start Supabase
         run: supabase db start
 
-      - name: Verify generated types are checked in
+      - name: Verify generated types
         run: |
-          supabase gen types typescript --local > types.gen.ts
-          if ! git diff --ignore-space-at-eol --exit-code --quiet types.gen.ts; then
-            echo "Detected uncommitted changes after build. See status below:"
-            git diff
+          supabase gen types typescript --local > ./src/types/database.types.ts
+
+          if git diff --ignore-space-at-eol --exit-code --quiet ./src/types/database.types.ts; then
+            echo "✓ Types are up to date"
+          else
+            echo "❌ Generated types differ from committed version!"
+            echo "   Run: supabase gen types typescript --local > ./src/types/database.types.ts"
+            git diff ./src/types/database.types.ts
             exit 1
           fi
