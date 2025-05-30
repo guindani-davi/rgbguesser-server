@@ -14,6 +14,7 @@
 | RF10 | O sistema deve apresentar acesso a recursos e materiais para aprendizado da teoria a respeito da codificação RGB                                                                           |
 | RF11 | O sistema deve fazer a verificação de cada resposta do usuário e retornar o resultado (correto ou incorreto)                                                                               |
 | RF12 | A interface de uma atividade deve informar ao usuário o progresso dele dentro dela                                                                                                         |
+
 # Regras de Negócio
 
 | ID   | Descrição                                                                                                                       |
