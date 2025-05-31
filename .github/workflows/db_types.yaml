@@ -22,6 +22,7 @@ jobs:
       - name: Verify generated types are checked in
         run: |
           supabase gen types typescript --local > ./src/types/database.types.ts
+          npm run lint:prettier:fix
           if ! git diff --ignore-space-at-eol --exit-code --quiet ./src/types/database.types.ts; then
             echo "Detected uncommitted changes after build. See status below:"
             git diff
