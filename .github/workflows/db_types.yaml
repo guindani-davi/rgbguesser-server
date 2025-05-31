@@ -3,6 +3,7 @@ name: DB Types
 on:
   pull_request:
   workflow_dispatch:
+  push:
 
 jobs:
   test:
