@@ -2,8 +2,8 @@ name: Deploy Migrations to Preview
 
 on:
   push:
-    branches:
-      - preview
+    branches-ignore:
+      - main
   workflow_dispatch:
 
 jobs:
