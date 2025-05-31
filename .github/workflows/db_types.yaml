@@ -6,7 +6,7 @@ on:
   push:
 
 jobs:
-  test:
+  check-db-types:
     runs-on: ubuntu-latest
 
     steps:
