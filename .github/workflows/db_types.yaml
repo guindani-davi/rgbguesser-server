@@ -1,6 +1,6 @@
 name: DB Types
 
-on: [push, pull_request]
+on: pull_request
 
 jobs:
   check-db-types:
