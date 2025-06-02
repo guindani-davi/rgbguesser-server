@@ -2,4 +2,3 @@ npm run lint:prettier:check
 npm run lint:prettier:fix
 npm run lint:eslint:check
 npm run lint:eslint:fix
-npx lint-staged
