@@ -51,7 +51,11 @@ jobs:
         with:
           node-version: ${{ needs.setup.outputs.node-version }}
       - run: npm ci
-      - run: npx commitlint --from ${{ github.event.pull_request.base.sha }} --to ${{ github.event.pull_request.head.sha }} --verbose
+      - run: |
+          npx commitlint 
+          --from ${{ github.event.pull_request.base.sha }} 
+          --to ${{ github.event.pull_request.head.sha }} 
+          --verbose
 
   secretlint:
     name: secretlint
