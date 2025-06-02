@@ -1,16 +1,16 @@
 import express, { Request, Response } from "express";
+import dotenv from "dotenv";
+
+dotenv.config();
 
 const app = express();
-const PORT = 3000;
 
 app.get("/", (req: Request, res: Response) => {
-  res.send("Servidor Express com TypeScript e ts-node!");
+  res.status(200).end();
 });
 
-app.get("/ping", (req: Request, res: Response) => {
-  res.send("Pong");
+app.listen(process.env.PORT, () => {
+  console.log(`Server running on http://localhost:${process.env.PORT}`);
 });
 
-app.listen(PORT, () => {
-  console.log(`Servidor rodando em http://localhost:${PORT}`);
-});
+export default app;
