@@ -4,24 +4,24 @@ on: pull_request
 
 jobs:
   prettier:
-    name: Prettier
+    name: prettier
     runs-on: ubuntu-latest
     steps:
       - uses: actions/checkout@v4
       - uses: actions/setup-node@v4
         with:
-          node-version: "22.15.1"
+          node-version: ${{ steps.node-version.outputs.node-version }}
       - run: npm ci
       - run: npm run lint:prettier:check
 
   eslint:
-    name: ESLint
+    name: eslint
     runs-on: ubuntu-latest
     steps:
       - uses: actions/checkout@v4
       - uses: actions/setup-node@v4
         with:
-          node-version: "22.15.1"
+          node-version: ${{ steps.node-version.outputs.node-version }}
       - run: npm ci
       - run: npm run lint:eslint:check
 
@@ -34,17 +34,17 @@ jobs:
           fetch-depth: 0
       - uses: actions/setup-node@v4
         with:
-          node-version: "22.15.1"
+          node-version-file: ".nvmrc"
       - run: npm ci
       - run: npx commitlint --from ${{ github.event.pull_request.base.sha }} --to ${{ github.event.pull_request.head.sha }} --verbose
 
   secretlint:
-    name: Secretlint
+    name: secretlint
     runs-on: ubuntu-latest
     steps:
       - uses: actions/checkout@v4
       - uses: actions/setup-node@v4
         with:
-          node-version: "22.15.1"
+          node-version: ${{ steps.node-version.outputs.node-version }}
       - run: npm ci
       - run: npx secretlint --maskSecrets "**/*"
