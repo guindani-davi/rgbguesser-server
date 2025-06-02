@@ -10,7 +10,7 @@ app.get("/", (req: Request, res: Response) => {
 });
 
 app.listen(process.env.PORT, () => {
-  console.log(`Server running on http://localhost:${process.env.PORT}`);
+  console.log(`Server listening to http://localhost:${process.env.PORT}`);
 });
 
 export default app;
