@@ -1,4 +1,4 @@
-name: Get Node version
+name: Get Node Version
 
 outputs:
   node-version:

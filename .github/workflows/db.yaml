@@ -1,4 +1,4 @@
-name: DB checks
+name: DB Checks
 
 on: pull_request
 
