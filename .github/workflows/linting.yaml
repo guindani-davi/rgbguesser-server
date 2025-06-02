@@ -37,10 +37,9 @@ jobs:
       - uses: actions/checkout@v4
         with:
           fetch-depth: 0
-      - uses: ./.github/actions/get-node-version
       - uses: actions/setup-node@v4
         with:
-          node-version: ${{ steps.node-version.outputs.node-version }}
+          node-version-file: ".nvmrc"
       - run: npm ci
       - run: |
           npx commitlint 
