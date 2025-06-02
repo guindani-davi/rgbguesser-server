@@ -3,48 +3,64 @@ name: Linting
 on: pull_request
 
 jobs:
-  prettier:
-    name: Prettier
+  node-version-setup:
+    name: node version setup
     runs-on: ubuntu-latest
+    outputs:
+      node-version: ${{ steps.set-node-version.outputs.node-version }}
+    steps:
+      - uses: actions/checkout@v4
+        run: |
+          NODE_VERSION=$(cat .nvmrc | tr -d 'v' | tr -d ' ')  
+          echo "Version: $NODE_VERSION" 
+          echo "node-version=$NODE_VERSION" >> $GITHUB_OUTPUT
+
+  prettier:
+    name: prettier
+    runs-on: ubuntu-latest
+    needs: node-version-setup
     steps:
       - uses: actions/checkout@v4
       - uses: actions/setup-node@v4
         with:
-          node-version: "22.15.1"
+          node-version: ${{ needs.setup.outputs.node-version }}
       - run: npm ci
       - run: npm run lint:prettier:check
 
   eslint:
-    name: ESLint
+    name: eslint
     runs-on: ubuntu-latest
+    needs: node-version-setup
     steps:
       - uses: actions/checkout@v4
       - uses: actions/setup-node@v4
         with:
-          node-version: "22.15.1"
+          node-version: ${{ needs.setup.outputs.node-version }}
       - run: npm ci
       - run: npm run lint:eslint:check
 
   commitlint:
     name: commitlint
     runs-on: ubuntu-latest
+    needs: node-version-setup
     steps:
       - uses: actions/checkout@v4
         with:
           fetch-depth: 0
       - uses: actions/setup-node@v4
         with:
-          node-version: "22.15.1"
+          node-version: ${{ needs.setup.outputs.node-version }}
       - run: npm ci
       - run: npx commitlint --from ${{ github.event.pull_request.base.sha }} --to ${{ github.event.pull_request.head.sha }} --verbose
 
   secretlint:
-    name: Secretlint
+    name: secretlint
     runs-on: ubuntu-latest
+    needs: node-version-setup
     steps:
       - uses: actions/checkout@v4
       - uses: actions/setup-node@v4
         with:
-          node-version: "22.15.1"
+          node-version: ${{ needs.setup.outputs.node-version }}
       - run: npm ci
       - run: npx secretlint --maskSecrets "**/*"
