@@ -8,7 +8,6 @@ jobs:
     runs-on: ubuntu-latest
     steps:
       - uses: actions/checkout@v4
-      - uses: ./.github/actions/get-node-version
       - uses: actions/setup-node@v4
         with:
           node-version: ${{ steps.node-version.outputs.node-version }}
@@ -20,7 +19,6 @@ jobs:
     runs-on: ubuntu-latest
     steps:
       - uses: actions/checkout@v4
-      - uses: ./.github/actions/get-node-version
       - uses: actions/setup-node@v4
         with:
           node-version: ${{ steps.node-version.outputs.node-version }}
@@ -49,7 +47,6 @@ jobs:
     runs-on: ubuntu-latest
     steps:
       - uses: actions/checkout@v4
-      - uses: ./.github/actions/get-node-version
       - uses: actions/setup-node@v4
         with:
           node-version: ${{ steps.node-version.outputs.node-version }}
