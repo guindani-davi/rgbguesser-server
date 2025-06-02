@@ -1,29 +1,28 @@
-name: DB Types
+name: DB checks
 
 on: pull_request
 
 jobs:
-  check-db-types:
+  types:
+    name: check db types
     runs-on: ubuntu-latest
-
     steps:
       - uses: actions/checkout@v4
       - uses: supabase/setup-cli@v1
         with:
           version: latest
+      - uses: ./.github/actions/get-node-version
       - uses: actions/setup-node@v4
         with:
-          node-version: "22.15.1"
+          node-version: ${{ steps.node-version.outputs.node-version }}
       - run: npm ci
-
-      - name: Start Supabase local development setup
-        run: supabase db start
-
-      - name: Verify generated types are checked in
-        run: |
+      - run: supabase db start
+      - run: |
           supabase gen types typescript --local > ./src/types/database.types.ts
           npm run lint:prettier:fix
-          if ! git diff --ignore-space-at-eol --exit-code --quiet ./src/types/database.types.ts; then
+          if ! git diff --ignore-space-at-eol --exit-code --quiet 
+          ./src/types/database.types.ts; 
+          then
             echo "Detected uncommitted changes after build. See status below:"
             git diff
             exit 1

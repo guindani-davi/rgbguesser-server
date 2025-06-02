@@ -1,0 +1,16 @@
+name: Get Node version
+
+outputs:
+  node-version:
+    description: "Node version from .nvmrc file"
+    value: ${{ steps.read-nvmrc.outputs.node-version }}
+
+runs:
+  using: "composite"
+  steps:
+    - shell: bash
+    - run: |
+      NODE_VERSION=$(cat .nvmrc | tr -d 'v ' | tr -d '\n')
+      echo "node-version=$NODE_VERSION" >> $GITHUB_OUTPUT
+    - env:
+      GITHUB_OUTPUT: ${{ github.output_path }}
