@@ -38,8 +38,8 @@
 - Implementação
   - Servidor
     - Implementar sistema de autenticação
-    - Implementar rota de inicialização de quizz
+    - Implementar rota de inicialização de quiz
     - Implementar rota de inicialização de puzzle
-    - Implementar rota de verificação de resposta do quizz
+    - Implementar rota de verificação de resposta do quiz
     - Implementar rota de verificação de resposta do puzzle
     - Implementar rota de progresso do usuário
