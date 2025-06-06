@@ -37,6 +37,7 @@
     - Definir variáveis de ambiente
 - Implementação
   - Servidor
+    - Implementar rota de status de serviços
     - Implementar sistema de autenticação
     - Implementar rota de inicialização de quiz
     - Implementar rota de inicialização de puzzle
