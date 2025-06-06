@@ -4,10 +4,10 @@
 | ---- | ------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------ |
 | RF01 | O sistema deve prover um forma de criação de cadastro com email e senha para novos usuários                                                                                                |
 | RF02 | O sistema deve ser capaz de autenticar um usuário com email e senha                                                                                                                        |
-| RF03 | O sistema deve fornecer acesso para usuários a atividades (quizz e puzzle) para treinar codificação RGB                                                                                    |
-| RF04 | O sistema deve fornecer uma interface para usuários selecionarem uma atividade (quizz ou puzzle) para fazer                                                                                |
+| RF03 | O sistema deve fornecer acesso para usuários a atividades (quiz e puzzle) para treinar codificação RGB                                                                                     |
+| RF04 | O sistema deve fornecer uma interface para usuários selecionarem uma atividade (quiz ou puzzle) para fazer                                                                                 |
 | RF05 | O sistema deve manter registro do progresso do usuário fora das atividades (quais ele fez, quais ainda não fez)                                                                            |
-| RF06 | A interface citada anteriormente deve conseguir informar quais atividades (quizz ou puzzle) já foram concluídas pelo usuário                                                               |
+| RF06 | A interface citada anteriormente deve conseguir informar quais atividades (quiz ou puzzle) já foram concluídas pelo usuário                                                                |
 | RF07 | O sistema deve manter registro do progresso do usuário em uma atividade (saber quantas e quais perguntas ele respondeu, acertou e errou, e quantas e quais ainda faltam serem respondidas) |
 | RF08 | Ao fim de uma atividade, o sistema deve oferecer uma revisão das questões quais o usuário escolheu a alternativa errada                                                                    |
 | RF09 | Quando o usuário escolher uma alternativa errada, o sistema deve mostrar a alternativa correta                                                                                             |

@@ -35,3 +35,12 @@
     - Configurar tecnologias
     - Planejar e implantar CI/CD
     - Definir variáveis de ambiente
+- Implementação
+  - Servidor
+    - Implementar rota de status de serviços
+    - Implementar sistema de autenticação
+    - Implementar rota de inicialização de quiz
+    - Implementar rota de inicialização de puzzle
+    - Implementar rota de verificação de resposta do quiz
+    - Implementar rota de verificação de resposta do puzzle
+    - Implementar rota de progresso do usuário
