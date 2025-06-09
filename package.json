@@ -3,7 +3,10 @@
   "version": "1.0.0",
   "main": "src/server.ts",
   "scripts": {
-    "dev": "nodemon --watch src --exec ts-node src/server.ts",
+    "dev": "npm run db:up && nodemon --watch src --exec ts-node src/server.ts",
+    "db:up": "supabase start",
+    "db:down": "supabase stop",
+    "db:update": "sh -c 'supabase db diff -f \"$1\" && supabase db reset && supabase gen types typescript --local > ./src/types/database.types.ts'",
     "lint:prettier:check": "prettier --check .",
     "lint:prettier:fix": "prettier --write .",
     "lint:eslint:check": "eslint .",
@@ -11,9 +14,8 @@
     "lint:sql-formatter:fix": "find supabase -name '*.sql' -exec npx sql-formatter --fix {} \\;",
     "prepare": "husky",
     "commit": "cz",
-    "test": "vitest",
-    "test:coverage": "vitest run --coverage",
-    "db:update": "sh -c 'supabase db diff -f \"$1\" && supabase db reset && supabase gen types typescript --local > ./src/types/database.types.ts'"
+    "test": "npm run db:up && vitest",
+    "test:coverage": "npm run db:up && vitest run --coverage"
   },
   "repository": {
     "type": "git",
