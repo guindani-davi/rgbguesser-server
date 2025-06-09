@@ -11,7 +11,8 @@
     "prepare": "husky",
     "commit": "cz",
     "test": "vitest",
-    "test:coverage": "vitest run --coverage"
+    "test:coverage": "vitest run --coverage",
+    "db:update": "sh -c 'supabase db diff -f \"$1\" && supabase db reset && supabase gen types typescript --local > ./src/types/database.types.ts'"
   },
   "repository": {
     "type": "git",
