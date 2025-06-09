@@ -4,6 +4,5 @@
   "keywordCase": "upper",
   "dataTypeCase": "upper",
   "functionCase": "upper",
-  "logicalOperatorNewLine": "after",
-  "expressionWidth": 80
+  "logicalOperatorNewLine": "after"
 }

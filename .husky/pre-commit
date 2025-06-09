@@ -1,4 +1,5 @@
 npm run lint:prettier:check
 npm run lint:eslint:check
+npm run lint:sql-formatter:fix
 npx lint-staged
 npm run test

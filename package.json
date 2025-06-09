@@ -8,6 +8,7 @@
     "lint:prettier:fix": "prettier --write .",
     "lint:eslint:check": "eslint .",
     "lint:eslint:fix": "eslint . --fix",
+    "lint:sql-formatter:fix": "find supabase -name '*.sql' -exec npx sql-formatter --fix {} \\;",
     "prepare": "husky",
     "commit": "cz",
     "test": "vitest",
