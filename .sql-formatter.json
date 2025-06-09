@@ -1,0 +1,9 @@
+{
+  "language": "postgresql",
+  "dialect": "postgresql",
+  "keywordCase": "upper",
+  "dataTypeCase": "upper",
+  "functionCase": "upper",
+  "logicalOperatorNewLine": "after",
+  "expressionWidth": 80
+}

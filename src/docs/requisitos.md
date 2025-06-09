@@ -1,4 +1,6 @@
-# Requisitos Funcionais
+# Requisitos do Sistema
+
+## Requisitos Funcionais
 
 | ID   | Descrição                                                                                                                                                                                  |
 | ---- | ------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------ |
@@ -15,7 +17,7 @@
 | RF11 | O sistema deve fazer a verificação de cada resposta do usuário e retornar o resultado (correto ou incorreto)                                                                               |
 | RF12 | A interface de uma atividade deve informar ao usuário o progresso dele dentro dela                                                                                                         |
 
-# Regras de Negócio
+## Regras de Negócio
 
 | ID   | Descrição                                                                                                                       |
 | ---- | ------------------------------------------------------------------------------------------------------------------------------- |
@@ -23,7 +25,7 @@
 | RN02 | Uma atividade deve ser considerada concluída quando o usuário acerta todas as questões (incluindo as retentativas após o erros) |
 | RN03 | Um usuário deve poder cometer no máximo 3 erros (no quarto ele perde a atividade e deve recomeçar)                              |
 
-# Requisitos Não funcionais
+## Requisitos Não funcionais
 
 | ID    | Descrição                                                                                       |
 | ----- | ----------------------------------------------------------------------------------------------- |
