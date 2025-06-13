@@ -5,7 +5,7 @@
   "scripts": {
     "db:up": "supabase start",
     "db:stop": "supabase stop",
-    "db:update": "sh -c 'supabase db diff -f \"$1\" && supabase db reset && supabase gen types typescript --local > ./src/types/database.types.ts'",
+    "db:update": "sh -c 'supabase db diff -f \"$1\" && npm run lint:sql-formatter:fix && supabase db reset && supabase gen types typescript --local > ./src/types/database.types.ts'",
     "dev": "trap \"npm run db:stop\" INT EXIT && npm run db:up && nodemon --watch src --exec ts-node src/server.ts",
     "test": "trap \"npm run db:stop\" INT EXIT && npm run db:up && vitest",
     "test:coverage": "trap \"npm run db:stop\" INT EXIT && npm run db:up && vitest run --coverage",

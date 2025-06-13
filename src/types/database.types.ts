@@ -40,7 +40,18 @@ export type Database = {
       [_ in never]: never;
     };
     Functions: {
-      [_ in never]: never;
+      get_active_connections: {
+        Args: Record<PropertyKey, never>;
+        Returns: number;
+      };
+      get_db_version: {
+        Args: Record<PropertyKey, never>;
+        Returns: string;
+      };
+      get_max_connections: {
+        Args: Record<PropertyKey, never>;
+        Returns: number;
+      };
     };
     Enums: {
       [_ in never]: never;
